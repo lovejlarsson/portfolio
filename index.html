@@ -7,11 +7,24 @@
     <title>Hej</title>
   </head>
   <body>
-    <div class="smooth-wrapper">
-      <div class="smooth-content h-[200vh]">
-        <h1 class="text-7xl text-center bg-testcolor" style="font-family: 'Inter', sans-serif;">Hello World!</h1>
-        <h1 class="text-7xl text-center font-fancy text-accent">Hello World!</h1>
-        <h1 class="text-7xl text-center font-fancy text-blueStrong -bottom-0.5 absolute">Hello World!</h1>
+
+    <header class="flex fixed w-full h-8 bg-gray-100 justify-between px-8">
+      <a class="fancy">Love Larsson</a>
+      <nav>
+        <ul class="flex content-center">
+          <li><a href="http://" target="_blank" rel="noopener noreferrer">About</a></li>
+          <li><a href="http://" target="_blank" rel="noopener noreferrer">Expertise</a></li>
+          <li><a href="http://" target="_blank" rel="noopener noreferrer">Works</a></li>
+          <li><a href="http://" target="_blank" rel="noopener noreferrer">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="smooth-wrapper">
+      <div id="smooth-content" class="h-[200vh]">
+        <h1 class="text-7xl text-center bg-testcolor">Hello World!</h1>
+        <h1 class="text-7xl text-center fancy text-accent">Hello World!</h1>
+        <h1 class="text-7xl text-center fancy text-blueStrong -bottom-0.5 absolute">Hello World!</h1>
         </div>
     </div>
     <script type="module" src="/src/main.js"></script>

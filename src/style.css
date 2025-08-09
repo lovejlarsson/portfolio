@@ -10,10 +10,15 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: 'Inter', sans-serif;
+  --font-sans: 'Inter', sans-serif;
   --font-fancy: 'Antiquarian', serif;
 
   --color-accent: #F7232C;
   --color-accentStrong: #FF1D00;
   --color-blueStrong: #2000FF;
+}
+
+.fancy {
+  font-family: 'Antiquarian', serif;
+  line-height: 1.5;
 }
