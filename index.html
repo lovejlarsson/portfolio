@@ -8,10 +8,10 @@
   </head>
   <body>
 
-    <header class="flex fixed w-full h-8 bg-gray-100 justify-between px-8">
-      <a class="fancy">Love Larsson</a>
+    <header class="flex fixed w-full h-12 justify-between px-8 items-center z-1">
+      <a class="fancy text-2xl h-full w-[10%] leading-[2.2]">Love Larsson</a>
       <nav>
-        <ul class="flex content-center">
+        <ul class="flex *:px-2">
           <li><a href="http://" target="_blank" rel="noopener noreferrer">About</a></li>
           <li><a href="http://" target="_blank" rel="noopener noreferrer">Expertise</a></li>
           <li><a href="http://" target="_blank" rel="noopener noreferrer">Works</a></li>
@@ -22,10 +22,16 @@
 
     <div id="smooth-wrapper">
       <div id="smooth-content" class="h-[200vh]">
-        <h1 class="text-7xl text-center bg-testcolor">Hello World!</h1>
-        <h1 class="text-7xl text-center fancy text-accent">Hello World!</h1>
+        <!-- hero  -->
+        <section class="w-full h-screen flex relative flex-col bg-gray-50">
+
+          <h1 class="text-8xl text-center w-full absolute top-2/5 fancy text-accent">Love Larsson</h1>
+          <p class="text-base text-center w-full absolute top-2/5 -translate-y-[-4rem]  text-gray-800">Computer Science Student & Freelance Designer</h1>
+
+        </section>
         <h1 class="text-7xl text-center fancy text-blueStrong -bottom-0.5 absolute">Hello World!</h1>
-        </div>
+        
+      </div>
     </div>
     <script type="module" src="/src/main.js"></script>
   </body>
