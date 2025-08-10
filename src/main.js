@@ -80,20 +80,6 @@ workTl.from('#work', {
   ease: "power3.out",
 }, 0);
 
-SplitText.create(".split", {
-  type: "words, chars",
-  mask: "words",
-  autoSplit: true,
-  onSplit(self) {
-    return gsap.from(self.chars, {
-      duration: 1, 
-      y: 100, 
-      autoAlpha: 0, 
-      stagger: 0.05
-    });
-  }
-});
-
 document.querySelectorAll('.hoversplit').forEach((element) => {
     const splitText = new SplitText(element, {
         type: "words, chars",
@@ -105,7 +91,6 @@ document.querySelectorAll('.hoversplit').forEach((element) => {
             yPercent: -85,
             duration: .4,
             stagger: .05,
-            overwrite: true,
             onComplete: () => split.revert()
         });
     });
@@ -118,4 +103,3 @@ document.querySelectorAll('.hoversplit').forEach((element) => {
         });
     });
 });
-

@@ -25,7 +25,7 @@
 .hoversplit {
   text-shadow: 0px 1em 0px #2000FF ;
   overflow: hidden;
-  height: 1.35em; /* Add this - adjust based on your font size */
+  height: 1.2em; /* Add this - adjust based on your font size */
   display: inline-block;
 }
 
