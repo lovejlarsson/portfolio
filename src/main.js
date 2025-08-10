@@ -22,7 +22,7 @@ let hero_tl = gsap.timeline({
     end: '80% 20%',
     ease: 1,
     scrub: true,
-    markers: true,
+    markers: false,
   }
 })
 
@@ -42,6 +42,17 @@ gsap.from('#logo', {
     start: 'bottom 30%',
     end: '+=50 30%',
     scrub: 1,
+    markers: false,
+  }
+})
+
+gsap.to('#portrait', {
+  y: 150,
+  scrollTrigger: {
+    trigger: '#portrait',
+    start: 'top 40%',
+    end: '+=500 30%',
+    scrub: true,
     markers: false,
   }
 });
