@@ -18,21 +18,30 @@ ScrollSmoother.create({
 let hero_tl = gsap.timeline({
   scrollTrigger: {
     trigger: '#hero',
-    start: '25% 20%',
-    end: 'bottom 20%',
-    scrub: false,
+    start: '20% 20%',
+    end: '80% 20%',
+    ease: 1,
+    scrub: true,
     markers: true,
   }
 })
 
-gsap.to('#logo', {
-  opacity: 1,
+hero_tl.from('#hero img:nth-child(1)', {
+    x: 200,
+    opacity: .25,
+}).from('#hero img:nth-child(2)', {
+    x: -200,
+    opacity: .25,
+}, 0.1)
+
+gsap.from('#logo', {
+  opacity: 0,
   x: 40,
   scrollTrigger: {
     trigger: '#hero',
     start: 'bottom 30%',
     end: '+=50 30%',
     scrub: 1,
-    markers: true,
+    markers: false,
   }
 });
