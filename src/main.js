@@ -47,8 +47,8 @@ gsap.from('#logo', {
   }
 })
 
-gsap.to('#portrait', {
-  y: 20,
+gsap.from('#portrait', {
+  y: -80,
   scrollTrigger: {
     trigger: '#portrait',
     start: 'top 60%',
@@ -73,9 +73,49 @@ let workTl = gsap.timeline({
 workTl.from('#work', {
   borderRadius: 30,
   scale: .95,
-  ease: "power2.in",
+  ease: "power3.out",
 }).to('#info', {
   y: 400,
   opacity: 0.8,
-  ease: "power1.in",
-}, 0); 
+  ease: "power3.out",
+}, 0);
+
+SplitText.create(".split", {
+  type: "words, chars",
+  mask: "words",
+  autoSplit: true,
+  onSplit(self) {
+    return gsap.from(self.chars, {
+      duration: 1, 
+      y: 100, 
+      autoAlpha: 0, 
+      stagger: 0.05
+    });
+  }
+});
+
+document.querySelectorAll('.hoversplit').forEach((element) => {
+    const splitText = new SplitText(element, {
+        type: "words, chars",
+        mask: 'chars',
+    });
+    
+    element.addEventListener('mouseenter', () => {
+        gsap.to(splitText.chars, {
+            yPercent: -85,
+            duration: .4,
+            stagger: .05,
+            overwrite: true,
+            onComplete: () => split.revert()
+        });
+    });
+    
+    element.addEventListener('mouseleave', () => {
+        gsap.to(splitText.chars, {
+            yPercent: 0, // Reset to original position
+            duration: .2,
+            stagger: .05,
+        });
+    });
+});
+

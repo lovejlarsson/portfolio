@@ -21,3 +21,16 @@
 .fancy {
   font-family: 'Antiquarian', serif;
 }
+
+.hoversplit {
+  text-shadow: 0px 1em 0px #2000FF ;
+  overflow: hidden;
+  height: 1.35em; /* Add this - adjust based on your font size */
+  display: inline-block;
+}
+
+.hoversplit .char {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
