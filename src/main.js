@@ -48,12 +48,34 @@ gsap.from('#logo', {
 })
 
 gsap.to('#portrait', {
-  y: 30,
+  y: 20,
   scrollTrigger: {
     trigger: '#portrait',
-    start: 'top 40%',
-    end: '+=500 30%',
+    start: 'top 60%',
+    end: '+=300 60%',
     scrub: true,
     markers: false,
+    id: "portrait",
   }
 })
+
+let workTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: '#work',
+    start: 'top 80%',
+    end: '80% 80%',
+    scrub: true,
+    markers: false,
+    id: "selected-work",
+  }
+});
+
+workTl.from('#work', {
+  borderRadius: 30,
+  scale: .95,
+  ease: "power2.in",
+}).to('#info', {
+  y: 400,
+  opacity: 0.8,
+  ease: "power1.in",
+}, 0); 
