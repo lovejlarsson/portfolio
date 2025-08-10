@@ -14,3 +14,25 @@ ScrollSmoother.create({
   effects: true, // looks for data-speed and data-lag attributes on elements
   smoothTouch: 0.1, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
 });
+
+let hero_tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: '#hero',
+    start: '25% 20%',
+    end: 'bottom 20%',
+    scrub: false,
+    markers: true,
+  }
+})
+
+gsap.to('#logo', {
+  opacity: 1,
+  x: 40,
+  scrollTrigger: {
+    trigger: '#hero',
+    start: 'bottom 30%',
+    end: '+=50 30%',
+    scrub: 1,
+    markers: true,
+  }
+});
