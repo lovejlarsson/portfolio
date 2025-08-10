@@ -20,8 +20,7 @@ let hero_tl = gsap.timeline({
     trigger: '#hero',
     start: '20% 20%',
     end: '80% 20%',
-    ease: 1,
-    scrub: true,
+    scrub: 1.5,
     markers: false,
   }
 })
@@ -29,9 +28,11 @@ let hero_tl = gsap.timeline({
 hero_tl.from('#hero img:nth-child(1)', {
     x: 200,
     opacity: .25,
+    ease: "power1.inOut"
 }).from('#hero img:nth-child(2)', {
     x: -200,
     opacity: .25,
+    ease: "power1.inOut"
 }, 0.1)
 
 gsap.from('#logo', {
@@ -47,7 +48,7 @@ gsap.from('#logo', {
 })
 
 gsap.to('#portrait', {
-  y: 150,
+  y: 30,
   scrollTrigger: {
     trigger: '#portrait',
     start: 'top 40%',
@@ -55,4 +56,4 @@ gsap.to('#portrait', {
     scrub: true,
     markers: false,
   }
-});
+})
