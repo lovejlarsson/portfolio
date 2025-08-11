@@ -62,23 +62,26 @@ gsap.from('#portrait', {
 let workTl = gsap.timeline({
   scrollTrigger: {
     trigger: '#work',
-    start: 'top 80%',
-    end: '80% 80%',
+    start: 'top 90%',
+    end: '80% 90%',
     scrub: true,
-    markers: false,
+    markers: true,
     id: "selected-work",
   }
 });
 
-workTl.from('#work', {
+workTl.fromTo('#work', {
   borderRadius: 30,
   scale: .95,
+  y: 0,
   ease: "power3.out",
-}).to('#info', {
-  y: 400,
-  opacity: 0.8,
-  ease: "power3.out",
-}, 0);
+}, {
+  borderRadius: 0,
+  scale: 1,
+  y: -200,
+  ease: "power3.out"
+} 
+)
 
 document.querySelectorAll('.hoversplit').forEach((element) => {
     const splitText = new SplitText(element, {
@@ -88,7 +91,7 @@ document.querySelectorAll('.hoversplit').forEach((element) => {
     
     element.addEventListener('mouseenter', () => {
         gsap.to(splitText.chars, {
-            yPercent: -85,
+            yPercent: -80,
             duration: .4,
             stagger: .05,
             onComplete: () => split.revert()
@@ -103,3 +106,5 @@ document.querySelectorAll('.hoversplit').forEach((element) => {
         });
     });
 });
+
+// TESTA STORA BOKSTÄVER MED TUNNARE VIKT 
