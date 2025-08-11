@@ -47,6 +47,19 @@ gsap.from('#logo', {
   }
 })
 
+gsap.to('header',
+{
+  backgroundColor: "#fff",
+  scrollTrigger: {
+    trigger: '#hero',
+    start: 'bottom 30%',
+    end: '+=50 30%',
+    scrub: true,
+    markers: false,
+    id: "navbar"
+  }
+})
+
 gsap.from('#portrait', {
   y: -80,
   scrollTrigger: {
@@ -63,8 +76,8 @@ let workTl = gsap.timeline({
   scrollTrigger: {
     trigger: '#work',
     start: 'top 90%',
-    end: '80% 90%',
-    scrub: true,
+    end: '+=600 90%',
+    scrub: 1,
     markers: true,
     id: "selected-work",
   }
@@ -74,11 +87,11 @@ workTl.fromTo('#work', {
   borderRadius: 30,
   scale: .95,
   y: 0,
-  ease: "power3.out",
+  ease: "power3.in",
 }, {
   borderRadius: 0,
   scale: 1,
-  y: -200,
+  y: -100,
   ease: "power3.out"
 } 
 )
