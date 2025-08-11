@@ -10,9 +10,9 @@ import { TextPlugin } from "gsap/TextPlugin";
 gsap.registerPlugin(ScrambleTextPlugin,ScrollTrigger,ScrollSmoother,SplitText,TextPlugin);
 
 ScrollSmoother.create({
-  smooth: 1, // how long (in seconds) it takes to "catch up" to the native scroll position
-  effects: true, // looks for data-speed and data-lag attributes on elements
-  smoothTouch: 0.1, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
+  smooth: 1.5, //högre siffra = mer friktion typ
+  effects: true, 
+  smoothTouch: 0.1,
 });
 
 let hero_tl = gsap.timeline({
@@ -49,14 +49,14 @@ gsap.from('#logo', {
 
 gsap.to('header',
 {
-  backgroundColor: "#fff",
+  color: "#fff",
   scrollTrigger: {
-    trigger: '#hero',
-    start: 'bottom 30%',
+    trigger: '#work',
+    start: '8% 30%',
     end: '+=50 30%',
     scrub: true,
     markers: false,
-    id: "navbar"
+    id: "navbar-text"
   }
 })
 
@@ -96,6 +96,27 @@ workTl.fromTo('#work', {
 } 
 )
 
+const splitWorks = new SplitText('#work h1', {
+  type: "chars",
+  mask: 'lines'
+})
+
+gsap.from(splitWorks.chars, {
+  yPercent: 80,
+  opacity: 0,
+  duration: 1,
+  stagger: .05,
+  ease: "power3.out",
+  scrollTrigger: {
+    trigger: "#work",
+    start: 'top 80%',
+    end: 'top 80%',
+    scrub: false,
+    markers: false,
+    id: 'work-heading',
+  }
+})
+
 document.querySelectorAll('.hoversplit').forEach((element) => {
     const splitText = new SplitText(element, {
         type: "words, chars",
@@ -119,5 +140,3 @@ document.querySelectorAll('.hoversplit').forEach((element) => {
         });
     });
 });
-
-// TESTA STORA BOKSTÄVER MED TUNNARE VIKT 
