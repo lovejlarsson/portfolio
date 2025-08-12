@@ -60,8 +60,10 @@ gsap.to('header',
   }
 })
 
+
+// man ser fan inte ens dehär----------------------------
 gsap.from('#portrait', {
-  y: -80,
+  y: -150,
   scrollTrigger: {
     trigger: '#portrait',
     start: 'top 60%',
