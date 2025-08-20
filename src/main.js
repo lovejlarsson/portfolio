@@ -63,6 +63,7 @@ gsap.to('header',
 
 // man ser fan inte ens dehär----------------------------
 gsap.from('#portrait', {
+  scale: .95,
   y: -150,
   scrollTrigger: {
     trigger: '#portrait',

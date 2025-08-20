@@ -17,6 +17,7 @@
   --color-accentStrong: #FF1D00;
   --color-blueStrong: #2000FF;
   --color-blackTheme: #080807;
+  --color-cream: #F3F3F1;
 }
 
 .fancy {
@@ -34,4 +35,16 @@
     position: relative;
     overflow: hidden;
     display: inline-block;
+}
+
+#footer-logo {
+  text-align: justify;
+  font-size: 4.3vw;
+  height: 200px;
+}
+
+#footer-logo:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
 }
