@@ -37,6 +37,10 @@
     display: inline-block;
 }
 
+.btn {
+  @apply bg-accentStrong hover:bg-accent hover:-translate-y-0.5 transition text-cream w-32 justify-center text-center rounded-lg px-2 py-1 mt-4;
+}
+
 #footer-logo {
   text-align: justify;
   font-size: 4.3vw;
