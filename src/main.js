@@ -80,7 +80,7 @@ let workTl = gsap.timeline({
     start: 'top 90%',
     end: '+=600 90%',
     scrub: 1,
-    markers: true,
+    markers: false,
     id: "work",
   }
 });

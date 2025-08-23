@@ -49,10 +49,10 @@
 #footer-logo svg {
   width: 100%;
   height: auto;
-
-  fill: white !important;
 }
 
-#footer-logo path {
+#footer-logo svg,
+#footer-logo svg g,
+#footer-logo svg path {
   fill: wheat !important;
 }
