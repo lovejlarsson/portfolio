@@ -44,14 +44,15 @@
 #footer-logo {
   height: auto;
   width: 100%;
-
-  text-align: justify;
-  font-size: 12.9vw;
-  line-height: 11vw;
-  text-indent: -0.7vw;
 }
 
-#footer-logo h1 {
-  display: block;
-  box-sizing: border-box;
+#footer-logo svg {
+  width: 100%;
+  height: auto;
+
+  fill: white !important;
+}
+
+#footer-logo path {
+  fill: wheat !important;
 }
