@@ -37,14 +37,21 @@
     display: inline-block;
 }
 
-#footer-logo {
-  text-align: justify;
-  font-size: 4.3vw;
-  height: 200px;
+.btn {
+  @apply bg-accentStrong hover:bg-accent hover:-translate-y-0.5 transition text-cream w-32 justify-center text-center rounded-lg px-3 py-2 mt-8;
 }
 
-#footer-logo:after {
-  content: "";
-  display: inline-block;
+#footer-logo {
+  height: auto;
   width: 100%;
+
+  text-align: justify;
+  font-size: 12.9vw;
+  line-height: 11vw;
+  text-indent: -0.7vw;
+}
+
+#footer-logo h1 {
+  display: block;
+  box-sizing: border-box;
 }

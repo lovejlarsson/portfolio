@@ -9,13 +9,12 @@
   <body>
 
     <header class="flex fixed w-full h-12 px-8 justify-between items-center z-1 bg-transparent">
-      <a id="logo" class="fancy text-2xl h-full w-1/5 leading-[2.2]" href="#hero">Love Larsson</a>
+      <a id="logo" class="fancy text-2xl h-full w-1/5 leading-[2.2]" href="#section1">Love Larsson</a>
       <nav>
         <ul class="flex *:px-2 font-light">
-          <li><a class="hoversplit" href="#about">ABOUT</a></li>
-          <li><a class="hoversplit" href="http://" target="_blank" rel="noopener noreferrer">EXPERTISE</a></li>
-          <li><a class="hoversplit" href="http://" target="_blank" rel="noopener noreferrer">WORK</a></li>
-          <li><a class="hoversplit" href="http://" target="_blank" rel="noopener noreferrer">CONTACT</a></li>
+          <li><a class="hoversplit" href="#section2" >ABOUT</a></li>
+          <li><a class="hoversplit" href="#section3">WORK</a></li>
+          <li><a class="hoversplit" href="#section4">CONTACT</a></li>
         </ul>
       </nav>
     </header>
@@ -23,7 +22,7 @@
     <div id="smooth-wrapper">
       <div id="smooth-content">
         <!-- hero  -->
-        <section id="hero" class="w-full h-screen flex relative flex-col bg-white">
+        <section id="section1" class="w-full h-screen flex relative flex-col bg-white">
 
           <h1 class="text-8xl text-center w-full absolute top-2/5 fancy text-accent">Love Larsson</h1>
           <p class="text-base text-center w-full absolute top-2/5 -translate-y-[-4rem]  text-gray-800">Computer Science Student & Freelance Designer</h1>
@@ -32,7 +31,8 @@
           <img class="absolute top-15 -left-40 h-50 w-auto" src="images/ante_banner.png">
 
         </section>
-        <section id="info" class="w-full h-auto relative flex flex-row justify-between px-8 py-16 bg-white">
+        <!-- about -->
+        <section id="section2" class="w-full h-auto relative flex flex-row justify-between px-8 py-16 bg-white">
           <div class="flex flex-col w-6/10">
 
             <div id="about" class="h-auto mb-8 flex flex-row justify-between *:font-extralight *:text-black *:text-sm">
@@ -65,21 +65,12 @@
             </div>
             <img id="portrait" class="w-80 h-80 -translate-y-16" src="images/pfp.jpg">
         </section>
-        <!-- byt färg på denhär work bakgrunden till mer clean theme -->
-        <section id="work" class="flex flex-col h-[200vh] bg-blackTheme pt-16">
-          <h1 class="fancy text-8xl text-accent w-full text-center">Selected Works</h1>
+        
+        <!-- work -->
+        <section id="section3" class="flex flex-col items-center bg-blackTheme py-16">
+          <h1 class="fancy text-8xl text-accent text-center">Selected Work</h1>
           <!-- Kanske när man hover om den riktiga bilden ligger under och syns! -->
           <div id="work1" class="w-19/20 h-100 mx-8 mt-32 text-cream font-extralight flex flex-row">
-            <div class="w-7/10 mr-8">
-              <img src="/images/1.gif" class="h-full object-cover object-[70%_50%]">
-            </div>
-            <div class="w-3/10 flex flex-col justify-between">
-              <p class="font-light">Custom Gaming Banner Design</p>
-              <p>Made for versatile use across multiple social platforms. Minimalistic design to shed light on the custom crown on the character. Usage of blurs and lighting to help. guide the eyes</p>
-            </div>
-          </div>
-
-          <div id="work2" class="w-19/20 h-100 mx-8 mt-32 text-cream font-extralight flex flex-row">
             <div class="w-7/10 mr-8 bg-amber-100">
               <img src="/images/kicksnstuff.jpg" class="w-full h-100 object-cover object-top">
             </div>
@@ -88,8 +79,43 @@
               <p>Logo created for KicksnStuff, selling curated high fashion clothes and sneakers. Previously located in Swedens 3rd largest shopping mall. Simplistic and modern logo, designed for both horizontal and square layouts.</p>
             </div>
           </div>
+
+          <div id="work2" class="w-19/20 h-100 mx-8 mt-32 text-cream font-extralight flex flex-row">
+            <div class="w-7/10 mr-8">
+              <img src="/images/chili.gif" class="w-full h-100 object-cover object-top">
+            </div>
+            <div class="w-3/10 flex flex-col justify-between">
+              <p class="font-light">2D Youtube Intro</p>
+              <p>Intro created for Swedish content creator El Chili. Made with transparent background to be used on top of underlying content. Custom ringbell asset created and animated by me. The intro is referencing Youtubes UI with some added playful details.</p>
+            </div>
+          </div>
+
+          <div id="work3" class="w-19/20 h-100 mx-8 mt-32 text-cream font-extralight flex flex-row">
+            <div class="w-7/10 mr-8">
+              <img src="/images/1.gif" class="h-full object-cover object-[70%_50%]">
+            </div>
+            <div class="w-3/10 flex flex-col justify-between">
+              <p class="font-light">Custom Gaming Banner Design</p>
+              <p>Made for versatile use across multiple social platforms. Minimalistic design to shed light on the custom crown on the character. Usage of blurs and lighting to help shift focus.</p>
+            </div>
+          </div>
+
+          <div id="stats" class="text-cream px-64 mt-16 w-full">
+            <ul class="flex flex-row justify-between *:px-8">
+              <li>
+                <span class="font-bold pr-8">3.000.000+</span> Youtube Views
+              </li>
+              <li>
+                <span class="font-bold pr-8">100+</span> Clients Globally
+              </li>
+              <li>
+                <span class="font-bold pr-8">10+</span> Years of Experience
+              </li>
+            </ul>
+          </div>
+          <a class="btn" href="https://www.behance.net/kogardesign#" target="_blank" rel="noopener noreferrer">Full portfolio</a>
         </section>
-        <footer class="w-full h-100 bg-accent flex flex-col justify-between pt-16 text-cream">
+        <footer id="footer" class="w-full h-100 bg-accentStrong flex flex-col justify-between pt-16 -mt-24 text-cream">
           <div id="textandname" class="flex flex-row px-8 justify-between">
             <div class="text-2xl">love.j.larsson@gmail.com</div>
             <ul class="*:font-light">
@@ -98,8 +124,8 @@
               <li><a href=""></a>Behance</li>
             </ul>
           </div>
-          <div id="footer-logo">
-            LARSSON.LOVE
+          <div id="footer-logo" class="font-bold scale-y-120 px-8">
+            <h1 class="text-white">LARSSON.LOVE</h1>
           </div>
         </footer>
       </div>

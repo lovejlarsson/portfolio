@@ -4,10 +4,11 @@ import { gsap } from "gsap";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { ScrollToPlugin } from 'gsap/all';
 import { SplitText } from "gsap/SplitText";
 import { TextPlugin } from "gsap/TextPlugin";
 
-gsap.registerPlugin(ScrambleTextPlugin,ScrollTrigger,ScrollSmoother,SplitText,TextPlugin);
+gsap.registerPlugin(ScrambleTextPlugin,ScrollTrigger,ScrollToPlugin,ScrollSmoother,SplitText,TextPlugin);
 
 ScrollSmoother.create({
   smooth: 1.5, //högre siffra = mer friktion typ
@@ -17,7 +18,7 @@ ScrollSmoother.create({
 
 let hero_tl = gsap.timeline({
   scrollTrigger: {
-    trigger: '#hero',
+    trigger: '#section1',
     start: '20% 20%',
     end: '80% 20%',
     scrub: 1.5,
@@ -25,11 +26,11 @@ let hero_tl = gsap.timeline({
   }
 })
 
-hero_tl.from('#hero img:nth-child(1)', {
+hero_tl.from('#section1 img:nth-child(1)', {
     x: 200,
     opacity: .25,
     ease: "power1.inOut"
-}).from('#hero img:nth-child(2)', {
+}).from('#section1 img:nth-child(2)', {
     x: -200,
     opacity: .25,
     ease: "power1.inOut"
@@ -39,7 +40,7 @@ gsap.from('#logo', {
   opacity: 0,
   x: 40,
   scrollTrigger: {
-    trigger: '#hero',
+    trigger: '#section1',
     start: 'bottom 30%',
     end: '+=50 30%',
     scrub: 1,
@@ -51,8 +52,8 @@ gsap.to('header',
 {
   color: "#fff",
   scrollTrigger: {
-    trigger: '#work',
-    start: '8% 30%',
+    trigger: '#section3',
+    start: '4% 30%',
     end: '+=50 30%',
     scrub: true,
     markers: false,
@@ -60,8 +61,6 @@ gsap.to('header',
   }
 })
 
-
-// man ser fan inte ens dehär----------------------------
 gsap.from('#portrait', {
   scale: .95,
   y: -150,
@@ -77,16 +76,16 @@ gsap.from('#portrait', {
 
 let workTl = gsap.timeline({
   scrollTrigger: {
-    trigger: '#work',
+    trigger: '#section3',
     start: 'top 90%',
     end: '+=600 90%',
     scrub: 1,
     markers: true,
-    id: "selected-work",
+    id: "work",
   }
 });
 
-workTl.fromTo('#work', {
+workTl.fromTo('#section3', {
   borderRadius: 30,
   scale: .95,
   y: 0,
@@ -94,12 +93,14 @@ workTl.fromTo('#work', {
 }, {
   borderRadius: 0,
   scale: 1,
-  y: -100,
+  y: -96,
   ease: "power3.out"
 } 
 )
 
-const splitWorks = new SplitText('#work h1', {
+// MISC ------------------------
+
+const splitWorks = new SplitText('#section3 h1', {
   type: "chars",
   mask: 'lines'
 })
@@ -111,7 +112,7 @@ gsap.from(splitWorks.chars, {
   stagger: .05,
   ease: "power3.out",
   scrollTrigger: {
-    trigger: "#work",
+    trigger: "#section3",
     start: 'top 80%',
     end: 'top 80%',
     scrub: false,
@@ -143,3 +144,35 @@ document.querySelectorAll('.hoversplit').forEach((element) => {
         });
     });
 });
+
+function getSamePageAnchor (link) {
+  if (
+    link.protocol !== window.location.protocol ||
+    link.host !== window.location.host ||
+    link.pathname !== window.location.pathname ||
+    link.search !== window.location.search
+  ) {
+    return false;
+  }
+
+  return link.hash;
+}
+
+// Scroll to a given hash, preventing the event given if there is one
+function scrollToHash(hash, e) {
+  const elem = hash ? document.querySelector(hash) : false;
+  if(elem) {
+    if(e) e.preventDefault();
+    gsap.to(window, {scrollTo: elem});
+  }
+}
+
+// If a link's href is within the current page, scroll to it instead
+document.querySelectorAll('a[href]').forEach(a => {
+  a.addEventListener('click', e => {
+    scrollToHash(getSamePageAnchor(a), e);
+  });
+});
+
+// Scroll to the element in the URL's hash on load
+scrollToHash(window.location.hash);
