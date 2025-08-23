@@ -46,8 +46,9 @@
   width: 100%;
 
   text-align: justify;
-  font-size: 13.3vw;
+  font-size: 12.9vw;
   line-height: 11vw;
+  text-indent: -0.7vw;
 }
 
 #footer-logo h1 {
