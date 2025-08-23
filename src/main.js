@@ -61,8 +61,6 @@ gsap.to('header',
   }
 })
 
-
-// man ser fan inte ens dehär----------------------------
 gsap.from('#portrait', {
   scale: .95,
   y: -150,
@@ -82,8 +80,8 @@ let workTl = gsap.timeline({
     start: 'top 90%',
     end: '+=600 90%',
     scrub: 1,
-    markers: false,
-    id: "selected-work",
+    markers: true,
+    id: "work",
   }
 });
 
@@ -95,10 +93,12 @@ workTl.fromTo('#section3', {
 }, {
   borderRadius: 0,
   scale: 1,
-  y: -100,
+  y: -96,
   ease: "power3.out"
 } 
 )
+
+// MISC ------------------------
 
 const splitWorks = new SplitText('#section3 h1', {
   type: "chars",

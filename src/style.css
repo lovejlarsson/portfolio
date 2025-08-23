@@ -45,6 +45,7 @@
   text-align: justify;
   font-size: 4.3vw;
   height: 200px;
+  width: 100%;
 }
 
 #footer-logo:after {
