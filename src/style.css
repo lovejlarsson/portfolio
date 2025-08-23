@@ -42,14 +42,15 @@
 }
 
 #footer-logo {
-  text-align: justify;
-  font-size: 4.3vw;
-  height: 200px;
+  height: auto;
   width: 100%;
+
+  text-align: justify;
+  font-size: 13.3vw;
+  line-height: 11vw;
 }
 
-#footer-logo:after {
-  content: "";
-  display: inline-block;
-  width: 100%;
+#footer-logo h1 {
+  display: block;
+  box-sizing: border-box;
 }
