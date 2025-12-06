@@ -5,15 +5,15 @@
 
 @layer base {
   h1 {
-    @apply text-4xl tracking-tight font-main bg-amber-200;
+    @apply text-4xl tracking-tight font-main;
   }
 
   h2 {
-    @apply text-3xl tracking-tight font-main;
+    @apply text-2xl tracking-tight font-main;
   }
 
   h3 {
-    @apply text-2xl font-main;
+    @apply text-xl font-main;
   }
 
   p {
