@@ -1,22 +1,30 @@
-@import "tailwindcss";
 @import url(general-sans.css);
+@import "tailwindcss";
 
-@theme {  --font-main: GeneralSansMedium, sans-serif;}
+@theme {
+  --font-main: GeneralSansMedium, sans-serif;
+
+  --color-charcoal: #080807;
+  --color-cream: #F3F3F1;
+  --color-accent: #F7232C;
+}
+
+
 
 @layer base {
   h1 {
-    @apply text-4xl tracking-tight font-main;
+    @apply text-4xl tracking-tight font-main text-charcoal;
   }
 
   h2 {
-    @apply text-2xl tracking-tight font-main;
+    @apply text-2xl tracking-tight font-main text-charcoal;
   }
 
   h3 {
-    @apply text-xl font-main;
+    @apply text-xl font-main text-charcoal;
   }
 
   p {
-    @apply text-base font-main;
+    @apply text-base font-main text-charcoal;
   }
 }
