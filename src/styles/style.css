@@ -28,3 +28,104 @@
     @apply text-base font-main text-charcoal;
   }
 }
+
+@media (max-width: 768px) {
+
+  /* ! HERO SECTION STYLES */
+  #hero {
+
+  }
+
+  html, body {
+  overflow-x: hidden;
+  }
+
+  header {
+    opacity: 0;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+  }
+
+  .hero-heading {
+    font-size: 10vw !important;
+  }
+
+  #hero-sub2 {
+    font-size: 4vw !important;
+  }
+
+  #hero-container {
+    display: flex;
+    flex-direction: column;
+    top: 20vh;
+  }
+
+  #img-container {
+    width: 30vw;
+    height: auto;
+  }
+
+  #hero-sub1, #hero-head2 {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+  }
+
+  /* ! WORK SECTION STYLES */
+ /* Skillnad på frame och bilden */
+  #image-grid {
+    height: auto !important;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 50vw);
+  }
+ 
+  #image-grid img {
+    width: 100%;
+    height: 100%; /* preserves aspect ratio */
+    object-fit: cover;
+  }
+
+  #stats {
+    width: 100%;
+  }
+
+  .stat {
+    font-size: 2.5vw !important;
+  }
+
+  /* ! ABOUT SECTION STYLES */
+
+  #about *> dt, dd, p, h3 {
+    font-size: clamp(.8rem, 2vw, 1.5rem);
+  }
+  
+  #about > :nth-child(1) {
+    grid-column: 1 / 4;
+  }
+  
+  #about > :nth-child(2) {
+    grid-column: 4 / 13;
+    grid-row: 1;
+  }
+
+  #about > :nth-child(4) {
+    grid-column: 4 / 13;
+    grid-row: 2;
+  }
+
+  #about-frame {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+
+  /* ! FOOTER SECTION STYLES */
+
+  footer h2 {
+    font-size: clamp(1rem, 2vw, 2.5rem);
+  }
+
+  footer p, a {
+    font-size: clamp(.8rem, 1vw, 1.5rem);
+  }
+}
