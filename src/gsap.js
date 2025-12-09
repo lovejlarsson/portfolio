@@ -20,21 +20,26 @@ const lenis = new Lenis({
 //   console.log(e);
 // });
 
-// Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
+
 lenis.on('scroll', ScrollTrigger.update);
 
-// Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
-// This ensures Lenis's smooth scroll animation updates on each GSAP tick
 gsap.ticker.add((time) => {
-  lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+  lenis.raf(time * 1000);
 });
 
-// Disable lag smoothing in GSAP to prevent any delay in scroll animations
+// Disable lag 
 gsap.ticker.lagSmoothing(0);
+
+window.addEventListener("DOMContentLoaded", () => {
+  gsap.from("#img-container", {
+    opacity: 0,
+    duration: 2,  
+    ease: "power4.inOut"
+  });
+});
 
 const statsText = gsap.utils.toArray('.stat');
 
-// Split each stat text once
 const splits = statsText.map(el => new SplitText(el, { type: "words" }));
 
 let statstl = gsap.timeline({
@@ -47,7 +52,6 @@ let statstl = gsap.timeline({
   }
 });
 
-// Add each animation to the same timeline, one after another
 splits.forEach(split => {
   statstl.from(split.words, {
     opacity: 0,
@@ -57,7 +61,6 @@ splits.forEach(split => {
     ease: "power4.out"
   });
 });
-
 
 const steps = [
   { el: "#hero4", pos: "10%" },
@@ -102,7 +105,7 @@ gsap.from(".about-img", {
     start: "top 90%",
     end: "80% 90%",
     scrub: 0,
-    markers: true
+    markers: false
   }
 });
 
