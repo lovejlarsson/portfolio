@@ -7,6 +7,7 @@ My portfolio and personal website
     - ~~~~Bug or feature att dom är olika långa?
     - ~~~~Allt nedanför också responsive
     - ~~~~Kanske skriva att det är selected works
+    - Gör om bilder till .webp
 
 ### Low prio
 - Fixa cookies, stats, eller annan backend
