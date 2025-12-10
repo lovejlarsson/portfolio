@@ -63,6 +63,7 @@ splits.forEach(split => {
 });
 
 const steps = [
+  { el: "#hero5", pos: "5%" },
   { el: "#hero4", pos: "10%" },
   { el: "#hero3", pos: "30%" },
   { el: "#hero2", pos: "40%" },
