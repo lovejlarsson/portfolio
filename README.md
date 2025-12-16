@@ -1,17 +1,16 @@
 # portfolio
 My portfolio and personal website
 
-## TODO
+## Tech Stack
 
-    - ~~~~Fixa selected works responsive
-    - ~~~~Bug or feature att dom är olika långa?
-    - ~~~~Allt nedanför också responsive
-    - ~~~~Kanske skriva att det är selected works
-    - Gör om bilder till .webp
+- Tailwind CSS
+- Vite
+- Vanilla Java Script
+- GSAP Animations
+- Lenis smooth scroll
 
-### Low prio
-- Fixa cookies, stats, eller annan backend
-- Lando Norris text hovern
-- Någon hover animation
-- Fixa tickerskärmen längst ner
-- Lägga till mer bilder (typ giffen) i bildanimationen
+- Original design and style guides developed in Figma
+
+------
+
+Hit me up if you have any questions regarding the site!
